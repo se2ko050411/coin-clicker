@@ -1,0 +1,339 @@
+:root {
+  --bg-top: #fff8f3;
+  --bg-bottom: #ffe7d6;
+  --card: #fffdfb;
+  --text: #5f4637;
+  --accent: #ff9f6e;
+  --accent-dark: #f37f47;
+  --accent-soft: #ffe1cf;
+  --border: #f3cdb8;
+  --shadow: rgba(184, 111, 67, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.game-card {
+  width: min(100%, 420px);
+  background: var(--card);
+  border: 3px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px var(--shadow);
+  padding: 28px 22px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+.description,
+.message {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.coin-panel {
+  background: var(--accent-soft);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.rate-panel {
+  background: #fff6f0;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 14px 16px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.coin-label,
+.total-label,
+.bonus-label,
+.rate-label {
+  display: block;
+  font-size: 0.95rem;
+}
+
+#coin-count,
+#total-coins,
+#coins-per-second {
+  display: block;
+  margin-top: 6px;
+  font-size: 2.3rem;
+}
+
+.click-button,
+.mini-button,
+.secondary-button {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.click-button {
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(243, 127, 71, 0.28);
+}
+
+.lucky-message {
+  min-height: 1.4em;
+  margin: 10px 0 22px;
+  text-align: center;
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.click-button:hover,
+.mini-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.click-button:active,
+.mini-button:active,
+.secondary-button:active {
+  transform: translateY(1px);
+}
+
+.shop {
+  display: grid;
+  gap: 12px;
+}
+
+.shop h2 {
+  margin-bottom: 2px;
+  font-size: 1.1rem;
+}
+
+.shop-card {
+  background: #fff6f0;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.shop-card.can-buy {
+  border-color: var(--accent);
+}
+
+.shop-item {
+  background: #fff6f0;
+  color: var(--text);
+  text-align: left;
+}
+
+.shop-card.not-ready {
+  opacity: 0.7;
+}
+
+.shop-name,
+.shop-text,
+.shop-price,
+.shop-owned {
+  display: block;
+}
+
+.shop-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.shop-text,
+.shop-price,
+.shop-owned {
+  font-size: 0.95rem;
+}
+
+.shop-price {
+  margin-top: 8px;
+}
+
+.shop-owned {
+  margin-top: 2px;
+}
+
+.shop-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.building-list {
+  display: grid;
+  gap: 12px;
+}
+
+.building-card {
+  background: #fff6f0;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.building-card.can-buy {
+  border-color: var(--accent);
+}
+
+.building-card.locked {
+  opacity: 0.75;
+}
+
+.building-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.building-name {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.building-income,
+.building-price,
+.building-owned,
+.building-lock {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.building-price,
+.building-owned,
+.building-lock {
+  margin-top: 6px;
+}
+
+.building-badge {
+  flex: 0 0 auto;
+  background: #fff2e8;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.building-card.locked .building-badge {
+  background: #f6e6da;
+}
+
+.building-buy-button {
+  margin-top: 12px;
+}
+
+.building-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mini-button {
+  background: #ffffff;
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mini-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auto-button.is-on {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.action-row {
+  margin-top: 18px;
+}
+
+.secondary-button {
+  background: #fff2e8;
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.bonus-panel,
+.total-panel {
+  background: #fff6f0;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 14px 16px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.bonus-label,
+.total-label {
+  font-size: 0.9rem;
+}
+
+#bonus-total {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.35rem;
+}
+
+.bonus-status {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  color: var(--accent-dark);
+  line-height: 1.5;
+}
+
+.bonus-status strong {
+  font-size: 1rem;
+}
+
+#total-coins {
+  font-size: 1.8rem;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Clicker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-card">
+    <p class="eyebrow">Mini Clicker</p>
+    <h1>Coin Clicker</h1>
+    <p class="description">ボタンを押してコインを集めましょう。</p>
+
+    <section class="coin-panel" aria-live="polite">
+      <span class="coin-label">現在のコイン</span>
+      <strong id="coin-count">0</strong>
+    </section>
+
+    <section class="rate-panel" aria-live="polite">
+      <span class="rate-label">1秒でもらえるコイン</span>
+      <strong id="coins-per-second">0</strong>
+    </section>
+
+    <button id="click-button" class="click-button">コインを集める</button>
+    <p id="lucky-message" class="lucky-message" aria-live="polite"></p>
+
+    <section class="shop">
+      <h2>アップグレード</h2>
+
+      <article class="shop-card">
+        <div id="power-upgrade" class="shop-item">
+          <span class="shop-name">クリック強化</span>
+          <span class="shop-text">1回のクリックでもらえるコイン +1</span>
+          <span class="shop-price">価格: <strong id="power-price">10</strong> コイン</span>
+          <span class="shop-owned">所持数: <strong id="power-count">0</strong></span>
+        </div>
+        <div class="shop-actions">
+          <button id="power-buy-button" class="mini-button" type="button">1個買う</button>
+          <button id="power-auto-button" class="mini-button auto-button" type="button">オート購入: オフ</button>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <div id="helper-upgrade" class="shop-item">
+          <span class="shop-name">おてつだいネコ</span>
+          <span class="shop-text">1秒ごとにコイン +1</span>
+          <span class="shop-price">価格: <strong id="helper-price">25</strong> コイン</span>
+          <span class="shop-owned">所持数: <strong id="helper-count">0</strong></span>
+        </div>
+        <div class="shop-actions">
+          <button id="helper-buy-button" class="mini-button" type="button">1個買う</button>
+          <button id="helper-auto-button" class="mini-button auto-button" type="button">オート購入: オフ</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="shop">
+      <h2>建物</h2>
+      <div id="building-list" class="building-list"></div>
+    </section>
+
+    <div class="action-row">
+      <button id="reset-button" class="secondary-button" type="button">データをリセットする</button>
+    </div>
+
+    <section class="bonus-panel" aria-live="polite">
+      <span class="bonus-label">節目ボーナス</span>
+      <strong id="bonus-total">現在の倍率: x1</strong>
+      <p id="bonus-status" class="bonus-status">まだ節目ボーナスは発動していません。</p>
+    </section>
+
+    <section class="total-panel" aria-live="polite">
+      <span class="total-label">今まで集めたコイン</span>
+      <strong id="total-coins">0</strong>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
